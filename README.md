@@ -1,19 +1,17 @@
-# SeleniumTestsFramework
+# SeleniumTests
 
-STF (SeleniumTestsFramework) is step by step test test reporting and automation framework for selenium.
-Refer STF [How-To guide](https://github.com/TestingForum/seleniumtestsframework/wiki) to learn more about STF features 
+This is a sample test project based on STF (SeleniumTestsFramework).
+To know more about STF please refer 
+STF [How-To guide](www.seleniumtests.com/2013/10/announcing-selenium-tests-automation.html)
 
-You can generate STF jar using following command and use it in your selenium project - 
+This test suite also include tests for android mobile site and android app as well, hence you must set up Appium before executing tests. Refer [Appium Beginners Tutorials](www.seleniumtests.com/p/appium-tutorial.html) before running test else mobile site and mobile app tests would fail
 
-```mvn clean install```
+You can clone this project and run tests as  
 
-This command should execute the UI tests in chrome browser and install STF jar in .m2 folder on successful execution of tests.
+```mvn clean test```
 
-In case, you don't see any tests running then you may to have first clean up the project. To do this, import the projects in eclipse and click ```Project Clean``` from command menu.
+Once test execution is over then you would find step by step report of all the test steps under -
 
-Depending on how you execute the projects, step by step selenium report after test execution would be available -
+```<path to your cloned directory>/seleniumtests/target/surefire-reports/SeleniumTestReport.html``` 
 
-1. ```<your home directory>/seleniumtestsframework/test-output/SeleniumTestReport.html``` when executing tests using eclipse testng plugin, or
-2. ```<your home directory>/seleniumtestsframework/target/surefire-reports/SeleniumTestReport.html``` when executing tests using maven command as stated above
-
-Have a question or feature request? post it in [Testing Forum](http://www.seleniumtests.com/p/testing-forum.html) :-)
+Have a question or feature request for STF? post it in [Testing Forum](http://www.seleniumtests.com/p/testing-forum.html) :-)
