@@ -1,0 +1,5 @@
+TestEntity.TestCaseId,TestEntity.TestMethod,User.UserID,User.Password
+TestLinkTestCaseID1,loginAsInvalidUser,wronguserid,wrongpassword
+TestLinkTestCaseID2,loginAsValidUser,admin,admin
+TestLinkTestCaseID22,loginAsValidUser,admin,admin
+TestLinkTestCaseID3,testForFailure,admin,admin

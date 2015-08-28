@@ -1,0 +1,134 @@
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+<suite name="Selenium Framework Test Suite" parallel="methods"
+       verbose="1" thread-count="5">
+    <listeners>
+        <listener class-name="com.seleniumtests.reporter.SeleniumTestsReporter" />
+        <!--<listener class-name="com.seleniumtests.core.TestRetryListener" />-->
+    </listeners>
+
+    <parameter name="appURL" value="http://www.seleniumtests.com/2013/08/demo-test-link-site.html"/>
+    <parameter name="browser" value="*chrome" />  <!--"*firefox, *chrome, *iexplore *android"-->
+    <parameter name="runMode" value="LOCAL" /> <!--LOCAL or ExistingGrid -->
+    <!--if parameter runMode is set to ExistingGrid then parameter webDriverGrid should have value set to system running grid
+
+    To start grid on a machine use following command -
+    java -jar selenium-server-standalone-<version>.jar -role hub
+
+    To execute tests on firefox using selenium grid, start node running firefox as -
+    java -jar selenium-server-standalone-<version>.jar -role node  -hub http://localhost:4444/grid/register
+    -browser  browserName=firefox platform=WINDOWS, ensureCleanSession=true, javascriptEnabled=true, acceptSslCerts=true,
+    ignoreProtectedModeSettings=true, ignoreZoomSetting=true, takesScreenshot=true
+
+    To execute tests on chrome using selenium grid, start node running chrome as -
+    java -jar selenium-server-standalone-<version>.jar -role node  -hub http://localhost:4444/grid/register -browser  browserName
+    =chrome platform=WINDOWS, ensureCleanSession=true, javascriptEnabled=true, acceptSslCerts=true, ignoreProtectedModeSettings=true,
+    ignoreZoomSetting=true, takesScreenshot=true -Dwebdriver.chrome.driver="<path to chrome driver exe on node machine>\chromedriver.exe"
+
+    To execute tests on internet explorer using selenium grid, start node running internet explorer as -
+    java -jar selenium-server-standalone-<version>.jar -role node  -hub http://localhost:4444/grid/register -browser  browserName
+    ="internet explorer" platform=WINDOWS, ensureCleanSession=true, javascriptEnabled=true, acceptSslCerts=true, ignoreProtectedModeSettings=true,
+    ignoreZoomSetting=true, takesScreenshot=true -Dwebdriver.ie.driver="<path to internet explorer driver on node machine>\IEDriverServer.exe"
+    -->
+
+    <parameter name="webDriverGrid" value="http://localhost:4444/wd/hub" />
+    <parameter name="webSessionTimeOut" value="120000" />
+    <parameter name="openReportInBrowser" value="firefox" />
+    <parameter name="maxConcurrentWebSessions" value="5" />
+    <parameter name="softAssertEnabled" value="true" />
+    <!-- For soft assert, use assert APIs from  com.seleniumtests.core.CustomAssertion class-->
+    <parameter name="useFirefoxDefaultProfile" value="false"/>
+
+    <test name="NonGUITest - Multiple assertion failures">
+        <parameter name="testType" value="NonGUI" />
+        <classes>
+            <class name="com.seleniumtests.tests.RetryTest" />
+        </classes>
+    </test>
+
+    <test name="NonGUITest - Soft CustomAssertion Test">
+        <parameter name="testType" value="NonGUI" />
+        <classes>
+            <class name="com.seleniumtests.tests.SoftAssertionTest" />
+        </classes>
+    </test>
+
+    <test name="WebTest - Test Link Login Test">
+        <!--testType parameter is optional for web test, since testType defaults to web-->
+        <parameter name="testType" value="Web" />
+        <classes>
+            <class name="com.seleniumtests.tests.TestLinkLoginTest" />
+        </classes>
+    </test>
+
+    <test name="WebTest - Test LinkElement Navigation Test">
+        <!--<parameter name="browser" value="*firefox" />-->
+        <parameter name="testType" value="Web" />
+        <classes>
+            <class name="com.seleniumtests.tests.TestLinkUsageTest" />
+        </classes>
+    </test>
+
+    <test name="Android m-site Test" parallel="false">
+        <parameter name="testType" value="Web" />
+        <parameter name="browser" value="*android" />
+        <parameter name="appiumServerURL" value="http://localhost:4723/wd/hub"/>
+        <parameter name="automationName" value="Appium"/>
+        <parameter name="platform" value="Android"/>
+        <parameter name="mobilePlatformVersion" value="5.1"/>
+        <parameter name="deviceName" value="emulator-5554"/>
+        <!--For m-site test, set this parameter to Browser-->
+        <parameter name="app" value="Browser"/>
+
+        <!--Test on default emulator Browser
+        Set the property to "Chrome" to run test on chrome browser on android device instead of default Browser-->
+        <parameter name="browserName" value="Browser"/>
+        <parameter name="newCommandTimeout" value="120"/>
+
+        <parameter name="parallel" value="false"/>
+
+        <groups>
+            <run>
+                <include name="loginAsInvalidUser"/>
+                <include name="testForFailure"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.seleniumtests.tests.TestLinkLoginTest" />
+        </classes>
+    </test>
+
+
+    <test name="Android App test" parallel="false">
+        <parameter name="browser" value="*android" />
+        <parameter name="testType" value="app" />
+        <parameter name="appiumServerURL" value="http://localhost:4723/wd/hub"/>
+        <parameter name="automationName" value="Appium"/>
+        <parameter name="platform" value="Android"/>
+        <parameter name="mobilePlatformVersion" value="5.1"/>
+        <parameter name="deviceName" value="emulator-5554"/>
+
+        <!--Path to app-->
+        <!--To launch an app, either path to app OR appPackage and appActivity should be specified -->
+        <!--<parameter name="app" value="Path To App"/>-->
+        <!--Java package of Android app to be run-->
+        <parameter name="appPackage" value="com.android.calculator2"/>
+        <!--Activity name for Android activity to be launched from package-->
+        <parameter name="appActivity" value="com.android.calculator2.Calculator"/>
+
+        <!--browserName should be empty string when automating app-->
+        <parameter name="browserName" value=""/>
+        <parameter name="newCommandTimeout" value="120"/>
+
+        <parameter name="parallel" value="false"/>
+
+        <groups>
+            <run>
+                <include name="addTwoNumbers"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.seleniumtests.tests.AndroidAppTest" />
+        </classes>
+    </test>
+
+</suite> 
