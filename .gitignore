@@ -9,4 +9,4 @@ chromedriver.log
 .idea/
 .settings/
 velocity.log
-seleniumtestsframework.iml
+seleniumtests.iml
