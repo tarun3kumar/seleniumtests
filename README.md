@@ -2,9 +2,9 @@
 
 This is a sample test project based on STF (SeleniumTestsFramework).
 To know more about STF please refer 
-STF [How-To guide](www.seleniumtests.com/2013/10/announcing-selenium-tests-automation.html)
+STF [How-To guide](http://www.seleniumtests.com/2013/10/announcing-selenium-tests-automation.html)
 
-This test suite also include tests for android mobile site and android app as well, hence you must set up Appium before executing tests. Refer [Appium Beginners Tutorials](www.seleniumtests.com/p/appium-tutorial.html) before running test else mobile site and mobile app tests would fail
+This test suite also include tests for android mobile site and android app as well, hence you must set up Appium before executing tests. Refer [Appium Beginners Tutorials](http://www.seleniumtests.com/p/appium-tutorial.html) before running test else mobile site and mobile app tests would fail
 
 You can clone this project and run tests as  
 
