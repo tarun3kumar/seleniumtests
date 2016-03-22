@@ -4,7 +4,9 @@ This is a sample test project based on STF (SeleniumTestsFramework).
 To know more about STF please refer 
 STF [How-To guide](http://www.seleniumtests.com/2013/10/announcing-selenium-tests-automation.html)
 
-This test suite also include tests for android mobile site and android app as well, hence you must set up Appium before executing tests. Refer [Appium Beginners Tutorials](http://www.seleniumtests.com/p/appium-tutorial.html) before running test else mobile site and mobile app tests would fail
+This test suite also include tests for android mobile site, android app and ios test as well, hence you must set up Appium before executing tests. Refer [Appium Beginners Tutorials](http://www.seleniumtests.com/p/appium-tutorial.html) before running test else mobile site and mobile app tests would fail
+
+If you use SauceLabs then you can pass Sauce Lab URL to execuete test on desired browser/app. Have a look at testng.xml for more details
 
 You can clone this project and run tests as  
 
