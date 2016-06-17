@@ -16,4 +16,8 @@ Once test execution is over then you would find step by step report of all the t
 
 ```<path to your cloned directory>/seleniumtests/target/surefire-reports/SeleniumTestReport.html``` 
 
-Have a question or feature request for STF? post it in [Testing Forum](http://www.seleniumtests.com/p/testing-forum.html) :-)
+<<<<<<< HEAD
+Have a question or feature request for STF? post it in [Testing Forum](http://www.seleniumtests.com/p/testing-forum.html)
+=======
+Have a question or feature request for STF? post it in [Testing Forum](http://www.seleniumtests.com/p/testing-forum.html) 
+>>>>>>> master
