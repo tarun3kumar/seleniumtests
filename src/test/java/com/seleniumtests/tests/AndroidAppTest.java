@@ -36,7 +36,7 @@ public class AndroidAppTest extends SeleniumTestPlan {
 
         CalculatorScreen calculatorScreen = new CalculatorScreen(true);
         String result = calculatorScreen.clickSymbol("2").clickSymbol("+").clickSymbol("4").clickSymbol("=")
-                                        .getResultText();
+                .getResultText();
         assertThat(result, is("6"));
     }
 }

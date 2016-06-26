@@ -40,16 +40,16 @@ import java.util.LinkedHashMap;
 public class RegistrationTest extends SeleniumTestPlan {
 
     @DataProvider(
-        name = "loginData",
-        parallel = true
+            name = "loginData",
+            parallel = true
     )
     public static Iterator<Object[]> getUserInfo(final Method m)
-        throws Exception {
+            throws Exception {
         Filter filter = Filter.equalsIgnoreCase(TestEntity.TEST_METHOD,
                 m.getName());
 
         LinkedHashMap<String, Class<?>> classMap =
-            new LinkedHashMap<String, Class<?>>();
+                new LinkedHashMap<String, Class<?>>();
         classMap.put("TestEntity", TestEntity.class);
         classMap.put("User", User.class);
 
@@ -58,50 +58,50 @@ public class RegistrationTest extends SeleniumTestPlan {
     }
 
     @Test(
-        groups = { "registerWithValidUserData" },
-        dataProvider = "loginData",
-        description = "Register with valid login data"
+            groups = { "registerWithValidUserData" },
+            dataProvider = "loginData",
+            description = "Register with valid login data"
     )
     public void registerWithValidUserData(final TestEntity testEntity,
-        final User user) throws Exception {
+                                          final User user) throws Exception {
 
         new RegistrationPage(true).submitValidRegistrationData(user);
         assertThat("User Name text box is missing on Login Page!!!",
-            LoginPage.isUserNameDisplayed(), is(true));
+                LoginPage.isUserNameDisplayed(), is(true));
 
     }
 
     @Test(
-        groups = { "registerWithInvalidUserData" },
-        dataProvider = "loginData",
-        description = "Register with Invalid login data"
+            groups = { "registerWithInvalidUserData" },
+            dataProvider = "loginData",
+            description = "Register with Invalid login data"
     )
     public void registerWithInvalidUserData(final TestEntity testEntity,
-        final User user) throws Exception {
+                                            final User user) throws Exception {
         RegistrationPage registrationPage = new RegistrationPage(true);
         registrationPage.enterFirstName(user.getFirstName()).enterLastName(
-            user.getLastName()).enterUserName(user.getUserName()).enterPassword(
-            user.getPassword());
+                user.getLastName()).enterUserName(user.getUserName()).enterPassword(
+                user.getPassword());
         assertThat(
-            "User Name text box is shown despite not completing registration process!!!",
-            LoginPage.isUserNameDisplayed(), is(true));
+                "User Name text box is shown despite not completing registration process!!!",
+                LoginPage.isUserNameDisplayed(), is(true));
 
     }
 
     @Test(
-        groups = { "loginTest" },
-        dataProvider = "loginData",
-        description =
-            "Login test to verify that google home page can be reached"
+            groups = { "loginTest" },
+            dataProvider = "loginData",
+            description =
+                    "Login test to verify that google home page can be reached"
     )
     public void loginTest(final TestEntity testEntity, final User user)
-        throws Exception {
+            throws Exception {
 
         GoogleHomePage googleHomePage = new RegistrationPage(true)
-            .submitValidRegistrationData(user).enterLoginData(user);
+                .submitValidRegistrationData(user).enterLoginData(user);
 
         assertThat("Google home page is not displayed after login",
-            googleHomePage.isSearchBoxDisplayed(), is(true));
+                googleHomePage.isSearchBoxDisplayed(), is(true));
 
     }
 }
