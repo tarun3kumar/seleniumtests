@@ -13,15 +13,13 @@
 
 package com.seleniumtests.tests;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-
-import static com.seleniumtests.core.CustomAssertion.assertThat;
-
 import com.seleniumtests.core.CustomAssertion;
+import com.seleniumtests.core.SeleniumTestPlan;
 import org.testng.annotations.Test;
 
-import com.seleniumtests.core.SeleniumTestPlan;
+import static com.seleniumtests.core.CustomAssertion.assertThat;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
 
 /**
  * Using Matchers.
