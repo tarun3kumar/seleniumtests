@@ -18,6 +18,7 @@ import static org.hamcrest.CoreMatchers.is;
 
 import static com.seleniumtests.core.CustomAssertion.assertThat;
 
+import com.seleniumtests.core.CustomAssertion;
 import org.testng.annotations.Test;
 
 import com.seleniumtests.core.SeleniumTestPlan;
@@ -37,6 +38,8 @@ public class RetryTest extends SeleniumTestPlan {
         assertThat("2 is always equal to 2", 2, equalTo(2));     // This won't fail
         assertThat("2 is always equal to 2", 2, is(equalTo(2))); // Same as previous statement
         assertThat("2 can not be equal to 3", 2, is(3));
+        // with out assertion check, soft failures would not be caught
+        assert CustomAssertion.getVerificationFailures().isEmpty():"Verification Errors";
     }
 
 }
