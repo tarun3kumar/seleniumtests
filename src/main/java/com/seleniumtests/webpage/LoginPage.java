@@ -13,6 +13,9 @@ import com.seleniumtests.webelements.TextFieldElement;
  * Created by tarun on 3/22/16.
  */
 public class LoginPage extends PageObject {
+    public static void main(String[] args){
+
+    }
 
     private static final TextFieldElement userNameTextBox = new TextFieldElement("Username Textbox",
             locateByName("usernameLoginPage"));

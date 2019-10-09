@@ -20,6 +20,10 @@ import org.openqa.selenium.By;
 
 public class UICatalogScreen extends PageObject {
 
+    public static void main(String[] args){
+
+    }
+
     public UICatalogScreen() throws Exception { }
 
     /**
