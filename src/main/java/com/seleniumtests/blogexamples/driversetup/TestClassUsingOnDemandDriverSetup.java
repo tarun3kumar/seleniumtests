@@ -7,7 +7,7 @@ public class TestClassUsingOnDemandDriverSetup extends BaseClassOnDemandDriverSe
     @Test
     public void testClassInstantiatingDriverWhenNeeded() throws InterruptedException {
         Thread.sleep(5000);
-        // driver is instantiates only when required
+        // Chrome browser opens only on this line when driver is really needed.
         getDriver().get("https://www.google.com");
     }
 

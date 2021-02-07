@@ -6,8 +6,7 @@ public class TestClassUsingBaseClassDriverSetup extends BaseClassDriverSetup {
 
     @Test
     public void testClassInstantiatingDriverInstantly() throws InterruptedException {
-        // driver is launched before control reaches next statement,
-        // Chrome browser opens before control reaches getDriver line
+        // Chrome browser opens before control reaches getDriver line i.e. before driver is really needed
         Thread.sleep(5000);
         getDriver().get("https://www.google.com");
     }
