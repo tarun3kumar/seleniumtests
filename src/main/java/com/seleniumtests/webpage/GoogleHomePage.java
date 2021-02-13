@@ -10,6 +10,10 @@ import com.seleniumtests.webelements.TextFieldElement;
  */
 public class GoogleHomePage extends PageObject {
 
+    public static void main(String[] args){
+
+    }
+
     private static final TextFieldElement searchTextBox = new TextFieldElement("search Text Box",
             Locator.locateByName("q"));
 

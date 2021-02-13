@@ -26,6 +26,10 @@ import com.seleniumtests.webelements.PageObject;
  */
 public class CalculatorScreen extends PageObject {
 
+    public static void main(String[] args){
+
+    }
+
     public CalculatorScreen() throws Exception { }
 
     /**

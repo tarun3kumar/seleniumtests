@@ -30,6 +30,9 @@ import com.seleniumtests.webelements.TextFieldElement;
  * <p/>Date: 10/2/13 Time: 6:26 PM
  */
 public class RegistrationPage extends PageObject {
+    public static void main(String[] args){
+
+    }
 
     private static final TextFieldElement firstNameTextbox = new TextFieldElement("First name text box",
             locateByName("firstname"));

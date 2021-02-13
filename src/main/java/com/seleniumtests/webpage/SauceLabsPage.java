@@ -8,6 +8,10 @@ import com.seleniumtests.webelements.PageObject;
 
 
 public class SauceLabsPage extends PageObject {
+
+    public static void main(String[] args){
+
+    }
     public SauceLabsPage() throws Exception {
     }
 
