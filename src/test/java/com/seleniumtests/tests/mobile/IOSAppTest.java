@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 
-package com.seleniumtests.tests;
+package com.seleniumtests.tests.mobile;
 
 import com.seleniumtests.core.SeleniumTestPlan;
 import com.seleniumtests.webpage.UICatalogScreen;

@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 
-package com.seleniumtests.tests;
+package com.seleniumtests.tests.web;
 
 import com.seleniumtests.core.CustomAssertion;
 import com.seleniumtests.core.SeleniumTestPlan;

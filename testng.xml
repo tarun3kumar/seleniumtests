@@ -41,7 +41,7 @@
         <!--testType parameter is optional for web test, since testType defaults to web-->
         <parameter name="testType" value="Web" />
         <classes>
-            <class name="com.seleniumtests.tests.RegistrationTest" />
+            <class name="com.seleniumtests.tests.web.RegistrationTest" />
         </classes>
     </test>
     <test name="WebTest - Test Link Login Test in Firefox">
@@ -49,21 +49,21 @@
         <parameter name="testType" value="Web" />
         <parameter name="browser" value="*firefox" />
         <classes>
-            <class name="com.seleniumtests.tests.RegistrationTest" />
+            <class name="com.seleniumtests.tests.web.RegistrationTest" />
         </classes>
     </test>
 
     <test name="NonGUITest - Multiple assertion failures">
         <parameter name="testType" value="NonGUI" />
         <classes>
-            <class name="com.seleniumtests.tests.RetryTest" />
+            <class name="com.seleniumtests.tests.web.RetryTest" />
         </classes>
     </test>
 
     <test name="NonGUITest - Soft CustomAssertion Test">
         <parameter name="testType" value="NonGUI" />
         <classes>
-            <class name="com.seleniumtests.tests.SoftAssertionTest" />
+            <class name="com.seleniumtests.tests.web.SoftAssertionTest" />
         </classes>
     </test>
 
@@ -86,7 +86,7 @@
         <parameter name="parallel" value="false"/>
 
         <classes>
-            <class name="com.seleniumtests.tests.RegistrationTest" />
+            <class name="com.seleniumtests.tests.web.RegistrationTest" />
         </classes>
     </test>
 
@@ -107,7 +107,7 @@
         <parameter name="parallel" value="false"/>
 
         <classes>
-            <class name="com.seleniumtests.tests.RegistrationTest" />
+            <class name="com.seleniumtests.tests.web.RegistrationTest" />
         </classes>
     </test>
 
@@ -139,7 +139,7 @@
             </run>
         </groups>
         <classes>
-            <class name="com.seleniumtests.tests.AndroidAppTest" />
+            <class name="com.seleniumtests.tests.mobile.AndroidAppTest" />
         </classes>
     </test>
 
@@ -166,7 +166,7 @@
             </run>
         </groups>
         <classes>
-            <class name="com.seleniumtests.tests.IOSAppTest" />
+            <class name="com.seleniumtests.tests.mobile.IOSAppTest" />
         </classes>
 
     </test>
@@ -186,7 +186,7 @@
         </groups>
 
         <classes>
-            <class name="com.seleniumtests.tests.SauceLabsTest" />
+            <class name="com.seleniumtests.tests.web.SauceLabsTest" />
         </classes>
 
     </test>

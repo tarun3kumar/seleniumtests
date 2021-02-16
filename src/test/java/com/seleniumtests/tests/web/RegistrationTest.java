@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 
-package com.seleniumtests.tests;
+package com.seleniumtests.tests.web;
 
 import static com.seleniumtests.core.CustomAssertion.assertThat;
 import com.seleniumtests.core.Filter;

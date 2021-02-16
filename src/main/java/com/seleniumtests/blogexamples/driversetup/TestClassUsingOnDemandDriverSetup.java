@@ -9,6 +9,7 @@ public class TestClassUsingOnDemandDriverSetup extends BaseClassOnDemandDriverSe
         Thread.sleep(5000);
         // Chrome browser opens only on this line when driver is really needed.
         getDriver().get("https://www.google.com");
+        System.out.println("I do nothing useful");
     }
 
 }
