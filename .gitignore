@@ -10,3 +10,4 @@ chromedriver.log
 .settings/
 velocity.log
 seleniumtests.iml
+*.DS_Store
