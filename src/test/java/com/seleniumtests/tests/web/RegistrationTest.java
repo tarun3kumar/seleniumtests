@@ -71,7 +71,7 @@ public class RegistrationTest extends SeleniumTestPlan {
 
     }
 
-    @Test(
+    /*@Test(
             groups = { "registerWithInvalidUserData" },
             dataProvider = "loginData",
             description = "Register with Invalid login data"
@@ -103,5 +103,5 @@ public class RegistrationTest extends SeleniumTestPlan {
         assertThat("Google home page is not displayed after login",
                 googleHomePage.isSearchBoxDisplayed(), is(true));
 
-    }
+    }*/
 }

@@ -2,4 +2,4 @@ TestEntity.TestCaseId,TestEntity.TestMethod,User.firstName,User.lastName,User.us
 TestLinkTestCaseID1,registerWithValidUserData,selenium,test,seleniumtest,123456
 TestLinkTestCaseID2,registerWithValidUserData,QTP,test,qtptest,123456
 TestLinkTestCaseID22,registerWithInvalidUserData,QTP,test,qtptest,123456
-TestLinkTestCaseID222,loginTest,Hercules,spartacus,Herculesspartacus,123456tarun@tarun-Vostro-2420:~/seleniumtestsframework/src/test/resources/com/sel
+TestLinkTestCaseID222,loginTest,Hercules,spartacus,Herculesspartacus,123456

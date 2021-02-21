@@ -1,6 +1,8 @@
-package com.seleniumtests.blogexamples.driversetup;
+package com.seleniumtests.tests.misc;
 
 import org.testng.annotations.Test;
+
+import com.seleniumtests.blogexamples.driversetup.BaseClassDriverSetup;
 
 public class TestClassUsingBaseClassDriverSetup extends BaseClassDriverSetup {
 
