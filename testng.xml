@@ -36,16 +36,23 @@
     <!-- For soft assert, use assert APIs from  com.seleniumtests.core.CustomAssertion class-->
     <parameter name="useFirefoxDefaultProfile" value="false"/>
 
-
-    <test name="WebTest - Test Link Login Test in Chrome">
+    <test name="WebTest - Using java 8">
         <!--testType parameter is optional for web test, since testType defaults to web-->
+        <parameter name="testType" value="Web" />
+        <classes>
+            <class name="com.seleniumtests.tests.web.SeleniumWithJava8" />
+        </classes>
+    </test>
+
+    <!--<test name="WebTest - Test Link Login Test in Chrome">
+        &lt;!&ndash;testType parameter is optional for web test, since testType defaults to web&ndash;&gt;
         <parameter name="testType" value="Web" />
         <classes>
             <class name="com.seleniumtests.tests.web.RegistrationTest" />
         </classes>
-    </test>
-    <test name="WebTest - Test Link Login Test in Firefox">
-        <!--testType parameter is optional for web test, since testType defaults to web-->
+    </test>-->
+    <!--<test name="WebTest - Test Link Login Test in Firefox">
+        &lt;!&ndash;testType parameter is optional for web test, since testType defaults to web&ndash;&gt;
         <parameter name="testType" value="Web" />
         <parameter name="browser" value="*firefox" />
         <classes>
@@ -75,11 +82,11 @@
         <parameter name="platform" value="Android"/>
         <parameter name="mobilePlatformVersion" value="5.1"/>
         <parameter name="deviceName" value="emulator-5554"/>
-        <!--For m-site test, set this parameter to Browser-->
+        &lt;!&ndash;For m-site test, set this parameter to Browser&ndash;&gt;
         <parameter name="app" value="Browser"/>
 
-        <!--Test on default emulator Browser
-        Set the property to "Chrome" to run test on chrome browser on android device instead of default Browser-->
+        &lt;!&ndash;Test on default emulator Browser
+        Set the property to "Chrome" to run test on chrome browser on android device instead of default Browser&ndash;&gt;
         <parameter name="browserName" value="Browser"/>
         <parameter name="newCommandTimeout" value="120"/>
 
@@ -92,12 +99,12 @@
 
     <test name="iOS m-site Test" parallel="false">
         <parameter name="testType" value="Web" />
-        <!--browser *iphone is used to run tests on both iphone and ipad-->
+        &lt;!&ndash;browser *iphone is used to run tests on both iphone and ipad&ndash;&gt;
         <parameter name="browser" value="*iphone" />
         <parameter name="appiumServerURL" value="http://localhost:4723/wd/hub"/>
         <parameter name="automationName" value="Appium"/>
         <parameter name="platform" value="iOS"/>
-        <!-- You can find the device name, version on ios by executing command "instruments -s devices" -->
+        &lt;!&ndash; You can find the device name, version on ios by executing command "instruments -s devices" &ndash;&gt;
         <parameter name="mobilePlatformVersion" value="8.4"/>
         <parameter name="deviceName" value="iPhone 6"/>
         <parameter name="app" value="Safari"/>
@@ -120,15 +127,15 @@
         <parameter name="mobilePlatformVersion" value="5.1"/>
         <parameter name="deviceName" value="emulator-5554"/>
 
-        <!--Path to app-->
-        <!--To launch an app, either path to app OR appPackage and appActivity should be specified -->
-        <!--<parameter name="app" value="Path To App"/>-->
-        <!--Java package of Android app to be run-->
+        &lt;!&ndash;Path to app&ndash;&gt;
+        &lt;!&ndash;To launch an app, either path to app OR appPackage and appActivity should be specified &ndash;&gt;
+        &lt;!&ndash;<parameter name="app" value="Path To App"/>&ndash;&gt;
+        &lt;!&ndash;Java package of Android app to be run&ndash;&gt;
         <parameter name="appPackage" value="com.android.calculator2"/>
-        <!--Activity name for Android activity to be launched from package-->
+        &lt;!&ndash;Activity name for Android activity to be launched from package&ndash;&gt;
         <parameter name="appActivity" value="com.android.calculator2.Calculator"/>
 
-        <!--browserName should be empty string when automating app-->
+        &lt;!&ndash;browserName should be empty string when automating app&ndash;&gt;
         <parameter name="browserName" value=""/>
         <parameter name="newCommandTimeout" value="120"/>
         <parameter name="parallel" value="false"/>
@@ -152,10 +159,10 @@
         <parameter name="mobilePlatformVersion" value="8.4"/>
         <parameter name="deviceName" value="iPhone 6"/>
 
-        <!--Path to app, if appium server is running on a different machine then this path corresponds to machine
-        where appium server is running-->
+        &lt;!&ndash;Path to app, if appium server is running on a different machine then this path corresponds to machine
+        where appium server is running&ndash;&gt;
         <parameter name="app" value="/Users/tbhadauria/Downloads/UICatalog.app"/>
-        <!--browserName should be empty string when automating app-->
+        &lt;!&ndash;browserName should be empty string when automating app&ndash;&gt;
         <parameter name="browserName" value=""/>
         <parameter name="newCommandTimeout" value="120"/>
         <parameter name="parallel" value="false"/>
@@ -173,7 +180,7 @@
 
     <test name="SauceLabs test" parallel="false">
         <parameter name="browser" value="*saucelabs" />
-        <!--<parameter name="testType" value="appium_web_ios" />-->
+        &lt;!&ndash;<parameter name="testType" value="appium_web_ios" />&ndash;&gt;
         <parameter name="sauceLabsURL" value="add saucelabs credentials"/>
         <parameter name="browserName" value="chrome"/>
         <parameter name="platform" value="Windows 7"/>
@@ -189,6 +196,6 @@
             <class name="com.seleniumtests.tests.web.SauceLabsTest" />
         </classes>
 
-    </test>
+    </test>-->
 
 </suite> 

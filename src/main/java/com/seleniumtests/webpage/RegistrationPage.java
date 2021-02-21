@@ -16,6 +16,11 @@ package com.seleniumtests.webpage;
 import static com.seleniumtests.core.Locator.locateByCSSSelector;
 import static com.seleniumtests.core.Locator.locateByName;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
 import com.seleniumtests.core.SeleniumTestsContextManager;
 
 import com.seleniumtests.dataobject.User;
@@ -23,6 +28,7 @@ import com.seleniumtests.dataobject.User;
 import com.seleniumtests.webelements.ButtonElement;
 import com.seleniumtests.webelements.PageObject;
 import com.seleniumtests.webelements.TextFieldElement;
+import com.seleniumtests.webelements.WebPageSection;
 
 /**
  * Provides services offered by Registration Page.
@@ -83,6 +89,10 @@ public class RegistrationPage extends PageObject {
         submitButton.click();
 
         return new LoginPage();
+    }
+
+    public List<WebElement> getAllTextFields() {
+        return driver.findElements(By.cssSelector("input[type='text']"));
     }
 
     public LoginPage submitValidRegistrationData(final User user) throws Exception {
