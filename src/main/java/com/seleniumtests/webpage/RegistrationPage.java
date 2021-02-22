@@ -92,6 +92,10 @@ public class RegistrationPage extends PageObject {
         return driver.findElements(By.cssSelector("input[type='text']"));
     }
 
+    public List<WebElement> getAllLinks() {
+        return driver.findElements(By.cssSelector("a"));
+    }
+
     public LoginPage submitValidRegistrationData(final User user) throws Exception {
         return enterFirstName(user.getFirstName()).enterLastName(user.getLastName()).enterUserName(user.getUserName())
                 .enterPassword(user.getPassword())

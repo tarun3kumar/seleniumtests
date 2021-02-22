@@ -41,7 +41,8 @@
         <!--testType parameter is optional for web test, since testType defaults to web-->
         <parameter name="testType" value="Web"/>
         <classes>
-            <class name="com.seleniumtests.tests.web.SeleniumWithJava8"/>
+            <!--<class name="com.seleniumtests.tests.web.SeleniumWithJava8"/>-->
+            <class name="com.seleniumtests.tests.web.SeleniumWithJava8Session2"></class>
         </classes>
     </test>
 
