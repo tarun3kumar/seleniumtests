@@ -15,13 +15,13 @@ public class SeleniumWithJava8Session2 extends SeleniumTestPlan {
     @Test
     public void usingJava8() throws Exception {
         RegistrationPage registrationPage = new RegistrationPage(true);
-        List<WebElement> inputElements = registrationPage.getAllLinks();
+        List<WebElement> linkElements = registrationPage.getAllLinks();
 
         System.out.println("###################");
         System.out.println("###################");
         System.out.println("get link count containing text selenium with out lambda");
         List<WebElement> resultantList = new ArrayList<>();
-        for (WebElement webElement : inputElements) {
+        for (WebElement webElement : linkElements) {
             if(webElement.getText().toLowerCase().contains("selenium")) {
                 resultantList.add(webElement);
             }
@@ -33,7 +33,7 @@ public class SeleniumWithJava8Session2 extends SeleniumTestPlan {
         System.out.println("###################");
         System.out.println("get link count containing text selenium with lambda");
         System.out.println("Total links containing word selenium: " +
-                inputElements.stream()
+                linkElements.stream()
                 .filter(s -> s.getText().toLowerCase().contains("selenium"))
                 .count());
 
@@ -42,14 +42,14 @@ public class SeleniumWithJava8Session2 extends SeleniumTestPlan {
         System.out.println("###################");
         System.out.println("Abstract out the common statements to a method:");
         System.out.println("Total links containing word selenium: "
-                +getLinkCountForGivenWord(inputElements, "selenium"));
+                +getLinkCountForGivenWord(linkElements, "selenium"));
 
 
         System.out.println("###################");
         System.out.println("###################");
         System.out.println("get link count containing text test and word length is > 4,  with out lambda");
         resultantList = new ArrayList<>();
-        for (WebElement webElement : inputElements) {
+        for (WebElement webElement : linkElements) {
             String word = webElement.getText().toLowerCase();
             if(word.contains("test") && word.length() > 4) {
                 resultantList.add(webElement);
@@ -65,7 +65,7 @@ public class SeleniumWithJava8Session2 extends SeleniumTestPlan {
         System.out.println("###################");
         System.out.println("get link count containing text test and word length is > 4,  with lambda");
         List<WebElement> listRetrievedUsingLambda =
-                inputElements.stream()
+                linkElements.stream()
                                 .filter(element -> element.getText().toLowerCase().contains("test"))
                                 .filter(element -> element.getText().length() > 4)
                                 .collect(Collectors.toList());
