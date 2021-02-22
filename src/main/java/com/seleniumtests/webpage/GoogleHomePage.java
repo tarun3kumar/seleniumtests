@@ -1,7 +1,6 @@
 package com.seleniumtests.webpage;
 
 import com.seleniumtests.core.Locator;
-
 import com.seleniumtests.webelements.PageObject;
 import com.seleniumtests.webelements.TextFieldElement;
 

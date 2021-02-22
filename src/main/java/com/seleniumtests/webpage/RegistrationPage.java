@@ -22,17 +22,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import com.seleniumtests.core.SeleniumTestsContextManager;
-
 import com.seleniumtests.dataobject.User;
-
 import com.seleniumtests.webelements.ButtonElement;
 import com.seleniumtests.webelements.PageObject;
 import com.seleniumtests.webelements.TextFieldElement;
-import com.seleniumtests.webelements.WebPageSection;
 
 /**
  * Provides services offered by Registration Page.
- *
+ * <p>
  * <p/>Date: 10/2/13 Time: 6:26 PM
  */
 public class RegistrationPage extends PageObject {
@@ -97,8 +94,8 @@ public class RegistrationPage extends PageObject {
 
     public LoginPage submitValidRegistrationData(final User user) throws Exception {
         return enterFirstName(user.getFirstName()).enterLastName(user.getLastName()).enterUserName(user.getUserName())
-                                                  .enterPassword(user.getPassword())
-                                                  .enterConfirmPassword(user.getPassword()).clickSubmitButton();
+                .enterPassword(user.getPassword())
+                .enterConfirmPassword(user.getPassword()).clickSubmitButton();
     }
 
 }

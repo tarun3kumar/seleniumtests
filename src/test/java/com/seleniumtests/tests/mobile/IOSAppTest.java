@@ -13,13 +13,14 @@
 
 package com.seleniumtests.tests.mobile;
 
-import com.seleniumtests.core.SeleniumTestPlan;
-import com.seleniumtests.webpage.UICatalogScreen;
-import org.testng.annotations.Test;
-
 import static com.seleniumtests.core.CustomAssertion.assertThat;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
+
+import org.testng.annotations.Test;
+
+import com.seleniumtests.core.SeleniumTestPlan;
+import com.seleniumtests.webpage.UICatalogScreen;
 
 /**
  * iOS app test suite.

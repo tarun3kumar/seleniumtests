@@ -1,13 +1,14 @@
-<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" > <suite name="Selenium Framework Test Suite" parallel="methods"
-                                                                         verbose="1" thread-count="5">
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+<suite name="Selenium Framework Test Suite" parallel="methods"
+       verbose="1" thread-count="5">
     <listeners>
-        <listener class-name="com.seleniumtests.reporter.SeleniumTestsReporter" />
-        <listener class-name="com.seleniumtests.core.TestRetryListener" />
+        <listener class-name="com.seleniumtests.reporter.SeleniumTestsReporter"/>
+        <listener class-name="com.seleniumtests.core.TestRetryListener"/>
     </listeners>
 
     <parameter name="appURL" value="http://www.seleniumtests.com/2015/12/test-registration-page.html"/>
-    <parameter name="browser" value="*chrome" />  <!--"*firefox, *chrome, *iexplore, *android"-->
-    <parameter name="runMode" value="LOCAL" /> <!--LOCAL or ExistingGrid -->
+    <parameter name="browser" value="*chrome"/>  <!--"*firefox, *chrome, *iexplore, *android"-->
+    <parameter name="runMode" value="LOCAL"/> <!--LOCAL or ExistingGrid -->
     <!--if parameter runMode is set to ExistingGrid then parameter webDriverGrid should have value set to system running grid
 
     To start grid on a machine use following command -
@@ -29,18 +30,18 @@
     ignoreZoomSetting=true, takesScreenshot=true -Dwebdriver.ie.driver="<path to internet explorer driver on node machine>\IEDriverServer.exe"
     -->
 
-    <parameter name="webDriverGrid" value="http://localhost:4444/wd/hub" />
-    <parameter name="webSessionTimeOut" value="120000" />
-    <parameter name="maxConcurrentWebSessions" value="5" />
-    <parameter name="softAssertEnabled" value="true" />
+    <parameter name="webDriverGrid" value="http://localhost:4444/wd/hub"/>
+    <parameter name="webSessionTimeOut" value="120000"/>
+    <parameter name="maxConcurrentWebSessions" value="5"/>
+    <parameter name="softAssertEnabled" value="true"/>
     <!-- For soft assert, use assert APIs from  com.seleniumtests.core.CustomAssertion class-->
     <parameter name="useFirefoxDefaultProfile" value="false"/>
 
     <test name="WebTest - Using java 8">
         <!--testType parameter is optional for web test, since testType defaults to web-->
-        <parameter name="testType" value="Web" />
+        <parameter name="testType" value="Web"/>
         <classes>
-            <class name="com.seleniumtests.tests.web.SeleniumWithJava8" />
+            <class name="com.seleniumtests.tests.web.SeleniumWithJava8"/>
         </classes>
     </test>
 

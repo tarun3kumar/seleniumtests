@@ -14,27 +14,22 @@
 package com.seleniumtests.tests.web;
 
 import static com.seleniumtests.core.CustomAssertion.assertThat;
-import com.seleniumtests.core.Filter;
-import com.seleniumtests.core.SeleniumTestPlan;
-
-import com.seleniumtests.dataobject.User;
-
-import com.seleniumtests.util.SpreadSheetHelper;
-import com.seleniumtests.util.internal.entity.TestEntity;
-
-import com.seleniumtests.webpage.GoogleHomePage;
-import com.seleniumtests.webpage.LoginPage;
-import com.seleniumtests.webpage.RegistrationPage;
-
 import static org.hamcrest.CoreMatchers.is;
+
+import java.lang.reflect.Method;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import java.lang.reflect.Method;
-
-import java.util.Iterator;
-import java.util.LinkedHashMap;
+import com.seleniumtests.core.Filter;
+import com.seleniumtests.core.SeleniumTestPlan;
+import com.seleniumtests.dataobject.User;
+import com.seleniumtests.util.SpreadSheetHelper;
+import com.seleniumtests.util.internal.entity.TestEntity;
+import com.seleniumtests.webpage.LoginPage;
+import com.seleniumtests.webpage.RegistrationPage;
 
 
 public class RegistrationTest extends SeleniumTestPlan {
@@ -58,7 +53,7 @@ public class RegistrationTest extends SeleniumTestPlan {
     }
 
     @Test(
-            groups = { "registerWithValidUserData" },
+            groups = {"registerWithValidUserData"},
             dataProvider = "loginData",
             description = "Register with valid login data"
     )

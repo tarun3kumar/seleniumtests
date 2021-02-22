@@ -1,9 +1,7 @@
-
 package com.seleniumtests.webpage;
 
 
 import com.seleniumtests.core.SeleniumTestsContextManager;
-
 import com.seleniumtests.webelements.PageObject;
 
 
@@ -13,9 +11,9 @@ public class SauceLabsPage extends PageObject {
 
     public SauceLabsPage(final boolean openAPP) throws Exception {
         super(null,
-            openAPP
-                ? SeleniumTestsContextManager.getThreadContext()
-                    .getSaucelabsURL() : null);
+                openAPP
+                        ? SeleniumTestsContextManager.getThreadContext()
+                        .getSaucelabsURL() : null);
     }
 
     public void getMeToTheSauceLabs() {

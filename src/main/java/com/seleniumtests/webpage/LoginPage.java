@@ -4,7 +4,6 @@ import static com.seleniumtests.core.Locator.locateByCSSSelector;
 import static com.seleniumtests.core.Locator.locateByName;
 
 import com.seleniumtests.dataobject.User;
-
 import com.seleniumtests.webelements.ButtonElement;
 import com.seleniumtests.webelements.PageObject;
 import com.seleniumtests.webelements.TextFieldElement;
@@ -27,6 +26,10 @@ public class LoginPage extends PageObject {
         super(userNameTextBox);
     }
 
+    public static boolean isUserNameDisplayed() {
+        return userNameTextBox.isDisplayed();
+    }
+
     public LoginPage enterUserName(final String userName) {
         userNameTextBox.clearAndType(userName);
 
@@ -39,16 +42,11 @@ public class LoginPage extends PageObject {
         return this;
     }
 
-    public static boolean isUserNameDisplayed() {
-        return userNameTextBox.isDisplayed();
-    }
-
     /**
      * Google Home Page is not part of seleniumtests.com but this how you can move from one page object to another.
      *
      * @return
-     *
-     * @throws  Exception
+     * @throws Exception
      */
     public GoogleHomePage clickSubmitButton() throws Exception {
         submitButton.click();

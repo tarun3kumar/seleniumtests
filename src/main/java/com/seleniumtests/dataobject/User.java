@@ -27,12 +27,12 @@ public class User {
         return firstName;
     }
 
-    public String getLastName() {
-        return lastName;
-    }
-
     public void setFirstName(final String firstName) {
         this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
     }
 
     public void setLastName(final String lastName) {
@@ -55,12 +55,13 @@ public class User {
         this.password = password;
     }
 
-    @Override public String toString() {
+    @Override
+    public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
 
         return stringBuilder.append("User [firstName = " + firstName + ", ")
-            .append("lastName = " + lastName + ",").append("userName = " +
-                userName + ",").append("password " + password + "]").toString();
+                .append("lastName = " + lastName + ",").append("userName = " +
+                        userName + ",").append("password " + password + "]").toString();
     }
 
 }

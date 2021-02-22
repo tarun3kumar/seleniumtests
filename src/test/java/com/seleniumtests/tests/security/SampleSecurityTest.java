@@ -1,9 +1,10 @@
 package com.seleniumtests.tests.security;
 
-import com.seleniumtests.blogexamples.driversetup.BaseSecurity;
-import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.Test;
 import org.zaproxy.clientapi.core.ClientApiException;
+
+import com.seleniumtests.blogexamples.driversetup.BaseSecurity;
+import lombok.extern.slf4j.Slf4j;
 
 
 @Slf4j

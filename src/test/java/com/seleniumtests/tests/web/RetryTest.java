@@ -13,13 +13,14 @@
 
 package com.seleniumtests.tests.web;
 
-import com.seleniumtests.core.CustomAssertion;
-import com.seleniumtests.core.SeleniumTestPlan;
-import org.testng.annotations.Test;
-
 import static com.seleniumtests.core.CustomAssertion.assertThat;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
+
+import org.testng.annotations.Test;
+
+import com.seleniumtests.core.CustomAssertion;
+import com.seleniumtests.core.SeleniumTestPlan;
 
 /**
  * Using Matchers.
@@ -37,7 +38,7 @@ public class RetryTest extends SeleniumTestPlan {
         assertThat("2 is always equal to 2", 2, is(equalTo(2))); // Same as previous statement
         assertThat("2 can not be equal to 3", 2, is(3));
         // with out assertion check, soft failures would not be caught
-        assert CustomAssertion.getVerificationFailures().isEmpty():"Verification Errors";
+        assert CustomAssertion.getVerificationFailures().isEmpty() : "Verification Errors";
     }
 
 }

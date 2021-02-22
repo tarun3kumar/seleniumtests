@@ -12,6 +12,54 @@ public class BigUser2 {
     private String password;
     private String confirmPassword;
 
+    private BigUser2(Builder builder) {
+        firstName = builder.firstName;
+        lastName = builder.lastName;
+        userName = builder.userName;
+        address1 = builder.address1;
+        address2 = builder.address2;
+        phone1 = builder.phone1;
+        phone2 = builder.phone2;
+        password = builder.password;
+        confirmPassword = builder.confirmPassword;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public String getAddress1() {
+        return address1;
+    }
+
+    public String getAddress2() {
+        return address2;
+    }
+
+    public String getPhone1() {
+        return phone1;
+    }
+
+    public String getPhone2() {
+        return phone2;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getConfirmPassword() {
+        return confirmPassword;
+    }
+
     public static class Builder {
         private String firstName;
         private String lastName;
@@ -71,54 +119,5 @@ public class BigUser2 {
         public BigUser2 build() {
             return new BigUser2(this);
         }
-    }
-
-    private BigUser2(Builder builder) {
-        firstName = builder.firstName;
-        lastName = builder.lastName;
-        userName = builder.userName;
-        address1 = builder.address1;
-        address2 = builder.address2;
-        phone1 = builder.phone1;
-        phone2 = builder.phone2;
-        password = builder.password;
-        confirmPassword = builder.confirmPassword;
-    }
-
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public String getAddress1() {
-        return address1;
-    }
-
-    public String getAddress2() {
-        return address2;
-    }
-
-    public String getPhone1() {
-        return phone1;
-    }
-
-    public String getPhone2() {
-        return phone2;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public String getConfirmPassword() {
-        return confirmPassword;
     }
 }

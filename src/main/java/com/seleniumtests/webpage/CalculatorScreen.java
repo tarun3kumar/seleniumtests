@@ -16,7 +16,6 @@ package com.seleniumtests.webpage;
 import org.openqa.selenium.By;
 
 import com.seleniumtests.core.SeleniumTestsContextManager;
-
 import com.seleniumtests.webelements.ButtonElement;
 import com.seleniumtests.webelements.LabelElement;
 import com.seleniumtests.webelements.PageObject;
@@ -26,14 +25,14 @@ import com.seleniumtests.webelements.PageObject;
  */
 public class CalculatorScreen extends PageObject {
 
-    public CalculatorScreen() throws Exception { }
+    public CalculatorScreen() throws Exception {
+    }
 
     /**
      * Opens log in page.
      *
-     * @param   openAPP
-     *
-     * @throws  Exception
+     * @param openAPP
+     * @throws Exception
      */
     public CalculatorScreen(final boolean openAPP) throws Exception {
         super(null, openAPP ? SeleniumTestsContextManager.getThreadContext().getApp() : null);

@@ -13,14 +13,12 @@
 
 package com.seleniumtests.tests.mobile;
 
-import static org.hamcrest.CoreMatchers.is;
-
 import static com.seleniumtests.core.CustomAssertion.assertThat;
+import static org.hamcrest.CoreMatchers.is;
 
 import org.testng.annotations.Test;
 
 import com.seleniumtests.core.SeleniumTestPlan;
-
 import com.seleniumtests.webpage.CalculatorScreen;
 
 /**

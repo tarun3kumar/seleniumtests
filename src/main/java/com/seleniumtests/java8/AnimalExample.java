@@ -2,15 +2,6 @@ package com.seleniumtests.java8;
 
 public class AnimalExample {
 
-    public void makeItRun (Animal animal) {
-        animal.runNow();
-    }
-
-    public void makeItRunWithGivenSpeed (AnimalHavingMethodArgument animalHavingMethodArgument, double speed) {
-        animalHavingMethodArgument.runNowWithGivenSpeed(speed);
-    }
-
-
     public static void main(String[] args) {
         AnimalExample animalExample = new AnimalExample();
 
@@ -49,7 +40,7 @@ public class AnimalExample {
                 makeItRunWithGivenSpeed(new AnimalHavingMethodArgument() {
                     @Override
                     public void runNowWithGivenSpeed(double speed) {
-                        System.out.println("I run using given argument: " +speed);
+                        System.out.println("I run using given argument: " + speed);
                     }
                 }, 70.50);
 
@@ -59,7 +50,7 @@ public class AnimalExample {
         // Lambda expression > arguments LHS and body RHS
         animalExample.
                 makeItRunWithGivenSpeed(
-                        speed -> System.out.println("I run using given argument: " +speed), 70.50);
+                        speed -> System.out.println("I run using given argument: " + speed), 70.50);
 
 
         System.out.println("###################");
@@ -70,9 +61,17 @@ public class AnimalExample {
                 makeItRunWithGivenSpeed(
                         (speed) ->
                         {
-                            System.out.println("I run using given argument: " +speed);
-                            System.out.println("I am running again with double the speed: " +speed*2);
+                            System.out.println("I run using given argument: " + speed);
+                            System.out.println("I am running again with double the speed: " + speed * 2);
                         }, 70.50);
 
+    }
+
+    public void makeItRun(Animal animal) {
+        animal.runNow();
+    }
+
+    public void makeItRunWithGivenSpeed(AnimalHavingMethodArgument animalHavingMethodArgument, double speed) {
+        animalHavingMethodArgument.runNowWithGivenSpeed(speed);
     }
 }
