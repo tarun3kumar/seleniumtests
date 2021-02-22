@@ -17,7 +17,7 @@ public class SeleniumWithJava8 extends SeleniumTestPlan {
 
         System.out.println("###################");
         System.out.println("###################");
-        System.out.println("without lambda");
+        System.out.println("print element value without lambda");
         for (WebElement webElement : inputElements) {
             System.out.println(webElement.getAttribute("value"));
         }
@@ -25,7 +25,7 @@ public class SeleniumWithJava8 extends SeleniumTestPlan {
         System.out.println("###################");
         System.out.println("###################");
 
-        System.out.println("with lambda");
+        System.out.println("print element value with lambda");
         inputElements.forEach(element -> System.out.println(element.getAttribute("value")));
     }
 }
