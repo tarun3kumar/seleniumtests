@@ -82,7 +82,7 @@ public class SeleniumWithJava8Session2 extends SeleniumTestPlan {
 
     }
 
-    private static boolean hasGivenWord(WebElement element, String word) {
+    public static boolean hasGivenWord(WebElement element, String word) {
         return element.getText().toLowerCase().contains(word);
     }
 
