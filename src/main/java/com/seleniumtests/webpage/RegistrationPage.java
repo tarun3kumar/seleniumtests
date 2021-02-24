@@ -14,6 +14,7 @@
 package com.seleniumtests.webpage;
 
 import static com.seleniumtests.core.Locator.locateByCSSSelector;
+import static com.seleniumtests.core.Locator.locateById;
 import static com.seleniumtests.core.Locator.locateByName;
 
 import java.util.List;
@@ -44,6 +45,8 @@ public class RegistrationPage extends PageObject {
     private TextFieldElement pwd1NameTextbox = new TextFieldElement("password 1 text box", locateByName("psw1"));
 
     private TextFieldElement pwd2NameTextbox = new TextFieldElement("password 2 text box", locateByName("psw2"));
+
+    private ButtonElement cookieButton = new ButtonElement("password 2 text box", locateById("cookieChoiceDismiss"));
 
     private ButtonElement submitButton = new ButtonElement("submit Button",
             locateByCSSSelector("input~input[value='Submit']"));
@@ -100,6 +103,11 @@ public class RegistrationPage extends PageObject {
         return enterFirstName(user.getFirstName()).enterLastName(user.getLastName()).enterUserName(user.getUserName())
                 .enterPassword(user.getPassword())
                 .enterConfirmPassword(user.getPassword()).clickSubmitButton();
+    }
+
+    public RegistrationPage acceptCookie () {
+        cookieButton.click();
+        return this;
     }
 
 }
