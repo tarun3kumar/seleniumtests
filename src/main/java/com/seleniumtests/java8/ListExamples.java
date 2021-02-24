@@ -27,6 +27,8 @@ public class ListExamples {
                 .filter(i -> i > 4)
                 .filter(i -> i % 2 == 0)
                 .findFirst()
+                // Do not use get before checking whether Optional has a value or not
+                // Bad code follows
                 .get();
         System.out.println(result);
     }

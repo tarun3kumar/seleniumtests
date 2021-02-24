@@ -42,7 +42,7 @@
         <parameter name="testType" value="Web"/>
         <classes>
             <!--<class name="com.seleniumtests.tests.web.SeleniumWithJava8"/>-->
-            <class name="com.seleniumtests.tests.web.SeleniumWithJava8Session3"></class>
+            <class name="com.seleniumtests.tests.web.SeleniumWithJava8Session4"></class>
         </classes>
     </test>
 
