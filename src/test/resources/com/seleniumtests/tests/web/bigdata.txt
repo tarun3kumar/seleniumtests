@@ -1,0 +1,5 @@
+emp_id_1001, Oleh, 50000, Germany
+emp_id_1002, Svitlana, 60000, USA
+emp_id_1003, Marius, 80000, China
+emp_id_1004, Thierry, 100000, UK
+emp_id_1005, Alex, 90000, Canada

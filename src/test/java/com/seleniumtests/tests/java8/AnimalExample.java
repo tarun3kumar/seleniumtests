@@ -1,4 +1,4 @@
-package com.seleniumtests.java8;
+package com.seleniumtests.tests.java8;
 
 public class AnimalExample {
 
