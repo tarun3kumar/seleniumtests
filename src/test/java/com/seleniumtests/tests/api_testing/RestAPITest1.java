@@ -8,7 +8,6 @@ import java.net.HttpURLConnection;
 
 import javax.net.ssl.HttpsURLConnection;
 
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -16,12 +15,7 @@ import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
-public class RestAPITest {
-
-    @BeforeMethod(alwaysRun = true)
-    public void setUp() {
-        RestAssured.baseURI = "https://reqres.in";
-    }
+public class RestAPITest1 extends CoreAPITest {
 
     public Response getResponse(String api) {
         return get(api);
@@ -109,6 +103,11 @@ public class RestAPITest {
         // Let's run it in debug mode
     }
 
+    @DataProvider(name = "queryParameter")
+    public Object[][] queryParameter() {
+        return new Object[][]{{1, "george.bluth@reqres.in"}, {2, "michael.lawson@reqres.in"}};
+    }
+
 
     @Test
     public void testWithPathParameters() {
@@ -138,8 +137,4 @@ public class RestAPITest {
         // Let's run it  in debug mode and analyze results
     }
 
-    @DataProvider(name = "queryParameter")
-    public Object[][] queryParameter() {
-        return new Object[][]{{1, "george.bluth@reqres.in"}, {2, "michael.lawson@reqres.in"}};
-    }
 }
