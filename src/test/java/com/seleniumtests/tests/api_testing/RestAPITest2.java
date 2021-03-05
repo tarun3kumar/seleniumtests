@@ -57,6 +57,7 @@ public class RestAPITest2 extends CoreAPITest {
                         .and()
                         .extract()
                         .cookies();
+
         cookieMap.keySet().forEach(s -> System.out.println("cookie is:" + s + ", values is: " + cookieMap.get(s)));
     }
 
@@ -81,7 +82,6 @@ public class RestAPITest2 extends CoreAPITest {
                         body("data.first_name", equalTo("George")).
                         extract().
                         response();
-
 
         MatcherAssert.assertThat(response.path("data.last_name"), equalTo("Bluth"));
         MatcherAssert.assertThat(response.path("data.email"), equalTo("george.bluth@reqres.in"));
