@@ -26,7 +26,7 @@ public class RestAPITest1 extends CoreAPITest {
      */
     @Test
     public void printResponse() {
-        getResponse("/api/users?page=2")
+        getResponse(API_PAGE_2)
                 .getBody()
                 .prettyPrint();
     }
@@ -39,7 +39,7 @@ public class RestAPITest1 extends CoreAPITest {
         RestAssured
                 .given()
                 .when()
-                .get("/api/users?page=2")
+                .get(API_PAGE_2)
                 .then()
                 .assertThat()
                 .statusCode(HttpURLConnection.HTTP_OK);
@@ -49,7 +49,7 @@ public class RestAPITest1 extends CoreAPITest {
         RestAssured
                 .given()
                 .when()
-                .get("/api/users?page=2")
+                .get(API_PAGE_2)
                 .then()
                 .assertThat()
                 .statusCode(HttpURLConnection.HTTP_BAD_REQUEST);
@@ -59,7 +59,7 @@ public class RestAPITest1 extends CoreAPITest {
         RestAssured
                 .given()
                 .when()
-                .get("/api/users?page=2")
+                .get(API_PAGE_2)
                 .then()
                 .assertThat()
                 .body("total_pages", equalTo(2));
@@ -67,20 +67,20 @@ public class RestAPITest1 extends CoreAPITest {
         // Or with with() but this time test for fail
         RestAssured
                 .with()
-                .get("/api/users?page=2")
+                .get(API_PAGE_2)
                 .then()
                 .assertThat()
                 .body("total_pages", equalTo(100));
 
 
         // Without syntax sugar
-        get("/api/users?page=2")
+        get(API_PAGE_2)
                 .then()
                 .body("total_pages", equalTo(2));
 
 
         // Multiple checks
-        get("/api/users?page=2")
+        get(API_PAGE_2)
                 .then()
                     .statusCode(HttpURLConnection.HTTP_OK)
                 .and()
@@ -90,7 +90,7 @@ public class RestAPITest1 extends CoreAPITest {
     }
 
 
-    @Test(dataProvider = "queryParameter")
+    @Test(dataProvider = "queryParameterData")
     public void testWithQueryParameters(Object queryParameter, Object expectedResponse) {
         // Query parameters are appended at the end of an API endpoint and are identified by the question mark in front of them.
         // For example, in the endpoint /api/users?page=2, "page" is a query parameter (with value "2")
@@ -100,11 +100,10 @@ public class RestAPITest1 extends CoreAPITest {
                 .get("/api/users")
                 .then()
                 .body("data.email[0]", equalTo(expectedResponse));
-        // Let's run it in debug mode
     }
 
-    @DataProvider(name = "queryParameter")
-    public Object[][] queryParameter() {
+    @DataProvider(name = "queryParameterData")
+    public Object[][] queryParameterData() {
         return new Object[][]{{1, "george.bluth@reqres.in"}, {2, "michael.lawson@reqres.in"}};
     }
 
@@ -124,7 +123,7 @@ public class RestAPITest1 extends CoreAPITest {
 
     @Test
     public void passParametersBetweenTests() {
-        int total = get("/api/users?page=2")
+        int total = get(API_PAGE_2)
                 .then()
                 .extract()
                 .path("total"); //There are total 12 users
@@ -134,7 +133,6 @@ public class RestAPITest1 extends CoreAPITest {
                 .get("/api/users/{total}")
                 .then()
                 .body("data.first_name", equalTo("Rachel"));
-        // Let's run it  in debug mode and analyze results
     }
 
 }
