@@ -12,6 +12,7 @@ public class CoreAPITest {
     public void setUp() {
         RestAssured.baseURI = "https://reqres.in";
         RestAssured.port = 443;
+//        RestAssured.authentication = basic("username", "password");
     }
 }
 
