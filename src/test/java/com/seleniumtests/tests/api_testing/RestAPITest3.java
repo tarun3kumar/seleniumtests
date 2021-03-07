@@ -57,7 +57,6 @@ public class RestAPITest3 extends CoreAPITest {
 
     @Test
     public void postToCreate() {
-
         Map<String, String> jsonAsMap = new HashMap<>();
         jsonAsMap.put("name", "seleniumtest");
         jsonAsMap.put("job", "qa");
@@ -74,7 +73,65 @@ public class RestAPITest3 extends CoreAPITest {
                 .response();
 
         MatcherAssert.assertThat(Integer.valueOf(response.path("id")), greaterThan(0));
-
     }
 
+    @Test
+    public void postUsingJavaObject() {
+
+        User user = new User("testuser1", "qa_engineer");
+
+        Response response = given()
+                .body(user)
+                .when()
+                .post("https://reqres.in/api/users")
+                .then()
+                .statusCode(HTTP_CREATED)
+                .log()
+                .body()
+                .extract()
+                .response();
+
+        MatcherAssert.assertThat(Integer.valueOf(response.path("id")), greaterThan(0));
+    }
+
+    @Test
+    public void deserializeResponse() {
+
+        User user = new User("testuser1", "qa_engineer");
+
+        UserCreationStats userCreationStats = given()
+                .body(user)
+                .when()
+                .post("https://reqres.in/api/users")
+                .then()
+                .statusCode(HTTP_CREATED)
+                .log()
+                .body()
+                .extract()
+                .response()
+                .as(UserCreationStats.class);
+
+        System.out.println("id is: " + userCreationStats.id);
+        System.out.println("created at : " + userCreationStats.createdAt);
+    }
+
+    public class User {
+        private String name;
+        private String job;
+
+        public User(String name, String job) {
+            this.name = name;
+            this.job = job;
+        }
+    }
+
+    public class UserCreationStats {
+        private String id;
+        private String createdAt;
+
+        public UserCreationStats(String id, String createdAt) {
+            this.id = id;
+            this.createdAt = createdAt;
+        }
+    }
 }
