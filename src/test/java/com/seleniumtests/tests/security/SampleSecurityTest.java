@@ -10,12 +10,28 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class SampleSecurityTest extends BaseSecurity {
 
-    private static final String REG_URL = "https://juice-shop.herokuapp.com/";
+    private static final String JUICE_SHOP = "https://juice-shop.herokuapp.com/";
 
     @Test()
-    public void scanRegPage() throws ClientApiException {
-        getDriver().get(REG_URL);
+    public void passiveScanHomePage() throws ClientApiException {
+        getDriver().get(JUICE_SHOP);
         // some more logic using page object goes here
-        checkRiskCount(REG_URL);
+        checkRiskCount(JUICE_SHOP);
     }
+
+
+    @Test()
+    public void spiderScanHomePage() throws ClientApiException, InterruptedException {
+        getDriver().get(JUICE_SHOP);
+        spiderScan(JUICE_SHOP);
+        checkRiskCount(JUICE_SHOP);
+    }
+
+    @Test()
+    public void activeScanHomePage() throws ClientApiException, InterruptedException {
+        getDriver().get(JUICE_SHOP);
+        activeScan(JUICE_SHOP);
+        checkRiskCount(JUICE_SHOP);
+    }
+
 }
