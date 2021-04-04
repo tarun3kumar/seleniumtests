@@ -25,7 +25,7 @@ public class BaseSecurity extends BaseClassOnDemandDriverSetupWithProxy {
     private static ClientApi clientApi = new ClientApi("127.0.0.1", 8080, null);
     private static String securityTestReportPath = "target/zap-security-report.html";
 
-    public static void spiderScan(String targetURL) throws InterruptedException, ClientApiException {
+    public static void spiderTarget(String targetURL) throws InterruptedException, ClientApiException {
         String application_base_url = "https://<application_url>/"; // Example code to start and synchronize the spider scan.private static void startSpiderScan()
         log.info("Spider : {}", application_base_url);
 
