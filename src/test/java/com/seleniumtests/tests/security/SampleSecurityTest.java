@@ -21,7 +21,8 @@ public class SampleSecurityTest extends BaseSecurity {
     @Test()
     public void passiveScanHomePage() throws ClientApiException {
         getDriver().get(JUICE_SHOP);
-        // some more logic using page object goes here
+        // some more logic using page object to move to different pages goes here
+        waitForPassiveScanToComplete();
         checkRiskCount(JUICE_SHOP);
     }
 

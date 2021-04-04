@@ -82,11 +82,10 @@ public class BaseSecurity extends BaseClassOnDemandDriverSetupWithProxy {
             progress = Integer.parseInt(((ApiResponseElement) clientApi.ascan.status(scanId)).getValue());
             log.info("Scan progress: {}{}", progress, "%");
         } while (progress < 100);
-        System.out.println("Scan complete");
+        System.out.println("Active scan complete");
     }
 
     public static void checkRiskCount(String filterURL) throws ClientApiException {
-        waitForPassiveScanToComplete();
         log.info("Target URL {}", filterURL);
 
         int riskCountHigh = 0;
