@@ -37,22 +37,22 @@
     <!-- For soft assert, use assert APIs from  com.seleniumtests.core.CustomAssertion class-->
     <parameter name="useFirefoxDefaultProfile" value="false"/>
 
-    <test name="WebTest - Using java 8">
-        <!--testType parameter is optional for web test, since testType defaults to web-->
+    <!--<test name="WebTest - Using java 8">
+        &lt;!&ndash;testType parameter is optional for web test, since testType defaults to web&ndash;&gt;
         <parameter name="testType" value="Web"/>
         <classes>
-            <!--<class name="com.seleniumtests.tests.web.SeleniumWithJava8"/>-->
+            &lt;!&ndash;<class name="com.seleniumtests.tests.web.SeleniumWithJava8"/>&ndash;&gt;
             <class name="com.seleniumtests.tests.api_testing.RestAPITest1"></class>
         </classes>
-    </test>
+    </test>-->
 
-    <!--<test name="WebTest - Test Link Login Test in Chrome">
-        &lt;!&ndash;testType parameter is optional for web test, since testType defaults to web&ndash;&gt;
+    <test name="WebTest - Test Link Login Test in Chrome">
+        <!--testType parameter is optional for web test, since testType defaults to web-->
         <parameter name="testType" value="Web" />
         <classes>
             <class name="com.seleniumtests.tests.web.RegistrationTest" />
         </classes>
-    </test>-->
+    </test>
     <!--<test name="WebTest - Test Link Login Test in Firefox">
         &lt;!&ndash;testType parameter is optional for web test, since testType defaults to web&ndash;&gt;
         <parameter name="testType" value="Web" />
@@ -74,32 +74,29 @@
         <classes>
             <class name="com.seleniumtests.tests.web.SoftAssertionTest" />
         </classes>
-    </test>
+    </test> -->
 
-    <test name="Android m-site Test" parallel="false">
+    <!--<test name="Android m-site Test" parallel="false">
         <parameter name="testType" value="Web" />
         <parameter name="browser" value="*android" />
         <parameter name="appiumServerURL" value="http://localhost:4723/wd/hub"/>
         <parameter name="automationName" value="Appium"/>
         <parameter name="platform" value="Android"/>
-        <parameter name="mobilePlatformVersion" value="5.1"/>
-        <parameter name="deviceName" value="emulator-5554"/>
-        &lt;!&ndash;For m-site test, set this parameter to Browser&ndash;&gt;
-        <parameter name="app" value="Browser"/>
+        &lt;!&ndash;<parameter name="mobilePlatformVersion" value="5.1"/>&ndash;&gt;
+        &lt;!&ndash; device name is displayed on command adb devices &ndash;&gt;
+        <parameter name="deviceName" value="L2N0219828001013"/>
 
         &lt;!&ndash;Test on default emulator Browser
         Set the property to "Chrome" to run test on chrome browser on android device instead of default Browser&ndash;&gt;
-        <parameter name="browserName" value="Browser"/>
+        <parameter name="browserName" value="Chrome"/>
         <parameter name="newCommandTimeout" value="120"/>
-
         <parameter name="parallel" value="false"/>
-
         <classes>
-            <class name="com.seleniumtests.tests.web.RegistrationTest" />
+            <class name="com.seleniumtests.tests.mobile.AndroidWebTest" />
         </classes>
-    </test>
+    </test>-->
 
-    <test name="iOS m-site Test" parallel="false">
+    <!--<test name="iOS m-site Test" parallel="false">
         <parameter name="testType" value="Web" />
         &lt;!&ndash;browser *iphone is used to run tests on both iphone and ipad&ndash;&gt;
         <parameter name="browser" value="*iphone" />
