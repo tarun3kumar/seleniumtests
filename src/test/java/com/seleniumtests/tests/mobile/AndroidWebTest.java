@@ -13,12 +13,9 @@
 
 package com.seleniumtests.tests.mobile;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
 import com.seleniumtests.core.SeleniumTestPlan;
-import com.seleniumtests.driver.WebUIDriver;
 import com.seleniumtests.webpage.RegistrationPage;
 
 /**
@@ -26,21 +23,10 @@ import com.seleniumtests.webpage.RegistrationPage;
  */
 public class AndroidWebTest extends SeleniumTestPlan {
 
-    /**
-     * Adds two numbers using calculator program.
-     */
-    @Test(groups = {"addTwoNumbers"}, description = "Adds two numbers using calculator program")
+    @Test()
     public void testMobileWeb() throws Exception {
-        new RegistrationPage(true);
-        WebUIDriver.getWebDriver().get("http://www.seleniumtests.com/");
-
-        // close newsletter subscription window if present
-        if (WebUIDriver.getWebDriver().findElements(By.cssSelector(".mc-closeModal")).size() > 0) {
-            WebUIDriver.getWebDriver().findElement(By.cssSelector(".mc-closeModal")).click();
-        }
-
-        new Select(WebUIDriver.getWebDriver().findElement(By.id("PageList1_select"))).selectByVisibleText("WebDriver Forum");
-        assert WebUIDriver.getWebDriver().findElement(By.cssSelector(".post-title")).getText().equals("WebDriver Forum") : "unable to launch Webdriver forum";
+        RegistrationPage registrationPage = new RegistrationPage(true);
+        assert registrationPage.getTitle().equals("Test Registration Page") : "unable to launch Webdriver forum";
     }
 
 }
