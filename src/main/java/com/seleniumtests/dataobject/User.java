@@ -64,4 +64,12 @@ public class User {
                         userName + ",").append("password " + password + "]").toString();
     }
 
+    public User getDefaultUser() {
+        User user = new User();
+        user.setFirstName("Selenium");
+        user.setLastName("Selenium");
+        user.setUserName("Selenium user");
+        user.setPassword("Password!1");
+    }
+
 }
