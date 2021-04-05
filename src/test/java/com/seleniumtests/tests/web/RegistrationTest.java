@@ -52,7 +52,7 @@ public class RegistrationTest extends SeleniumTestPlan {
                 RegistrationTest.class, classMap, "loginuser.csv", filter);
     }
 
-    @Test(
+    /*@Test(
             groups = {"registerWithValidUserData"},
             dataProvider = "loginData",
             description = "Register with valid login data"
@@ -64,6 +64,13 @@ public class RegistrationTest extends SeleniumTestPlan {
         assertThat("User Name text box is missing on Login Page!!!",
                 LoginPage.isUserNameDisplayed(), is(true));
 
+    }*/
+
+    @Test()
+    public void registerWithValidUserData() throws Exception {
+        new RegistrationPage(true).submitValidRegistrationData(User.getDefaultUser());
+        assertThat("User Name text box is missing on Login Page!!!",
+                LoginPage.isUserNameDisplayed(), is(true));
     }
 
     /*@Test(
