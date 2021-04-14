@@ -38,18 +38,35 @@ public class CalculatorScreen extends PageObject {
         super(null, openAPP ? SeleniumTestsContextManager.getThreadContext().getApp() : null);
     }
 
-    public ButtonElement getSymbolElement(final String symbol) {
-        return new ButtonElement("Button Element", By.name(symbol));
+    public ButtonElement getDigitElement(final String symbol) {
+        // resource-id in appium inspector is the id
+        return new ButtonElement("Digit Button", By.id(String.format("com.android.calculator2:id/digit_%s", symbol)));
     }
 
-    public CalculatorScreen clickSymbol(final String symbol) {
-        getSymbolElement(symbol).click();
+    public ButtonElement getEqualElement() {
+        return new ButtonElement("Equal Button", By.id("com.android.calculator2:id/eq"));
+    }
+
+    public ButtonElement getPlusElement() {
+        return new ButtonElement("Equal Button", By.id("com.android.calculator2:id/op_add"));
+    }
+
+    public CalculatorScreen clickDigit(final String symbol) {
+        getDigitElement(symbol).click();
+        return this;
+    }
+
+    public CalculatorScreen clickPlus() {
+        getPlusElement().click();
+        return this;
+    }
+
+    public CalculatorScreen clickEqual() {
+        getEqualElement().click();
         return this;
     }
 
     public String getResultText() {
-
-        // You can also locate this element using class name - By.className("android.widget.EditText"))
         return new LabelElement("Result Text", By.id("com.android.calculator2:id/formula")).getText();
     }
 }

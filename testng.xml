@@ -76,25 +76,25 @@
         </classes>
     </test> -->
 
-    <test name="Android m-site Test" parallel="false">
+    <!--<test name="Android m-site Test" parallel="false">
         <parameter name="testType" value="Web" />
         <parameter name="browser" value="*android" />
         <parameter name="appiumServerURL" value="http://localhost:4723/wd/hub"/>
         <parameter name="automationName" value="Appium"/>
         <parameter name="platform" value="Android"/>
-        <!--<parameter name="mobilePlatformVersion" value="5.1"/>-->
-        <!-- device name is displayed on command adb devices -->
+        &lt;!&ndash;<parameter name="mobilePlatformVersion" value="5.1"/>&ndash;&gt;
+        &lt;!&ndash; device name is displayed on command adb devices &ndash;&gt;
         <parameter name="deviceName" value="L2N0219828001013"/>
 
-        <!--Test on default emulator Browser
-        Set the property to "Chrome" to run test on chrome browser on android device instead of default Browser-->
+        &lt;!&ndash;Test on default emulator Browser
+        Set the property to "Chrome" to run test on chrome browser on android device instead of default Browser&ndash;&gt;
         <parameter name="browserName" value="Chrome"/>
         <parameter name="newCommandTimeout" value="120"/>
         <parameter name="parallel" value="false"/>
         <classes>
             <class name="com.seleniumtests.tests.mobile.AndroidWebTest" />
         </classes>
-    </test>
+    </test>-->
 
     <!--<test name="iOS m-site Test" parallel="false">
         <parameter name="testType" value="Web" />
@@ -115,26 +115,32 @@
         <classes>
             <class name="com.seleniumtests.tests.web.RegistrationTest" />
         </classes>
-    </test>
+    </test>-->
 
     <test name="Android App test" parallel="false">
         <parameter name="browser" value="*android" />
         <parameter name="testType" value="app" />
         <parameter name="appiumServerURL" value="http://localhost:4723/wd/hub"/>
-        <parameter name="automationName" value="Appium"/>
         <parameter name="platform" value="Android"/>
-        <parameter name="mobilePlatformVersion" value="5.1"/>
-        <parameter name="deviceName" value="emulator-5554"/>
+        <!--Android version as found on phone settings -->
+        <parameter name="mobilePlatformVersion" value="10"/>
+        <!--device name is displayed on command adb devices-->
+        <parameter name="deviceName" value="L2N0219828001013"/>
 
-        &lt;!&ndash;Path to app&ndash;&gt;
-        &lt;!&ndash;To launch an app, either path to app OR appPackage and appActivity should be specified &ndash;&gt;
-        &lt;!&ndash;<parameter name="app" value="Path To App"/>&ndash;&gt;
-        &lt;!&ndash;Java package of Android app to be run&ndash;&gt;
+        <!--Appium UiAutomator2 Driver is a test automation framework for Android devices
+        https://github.com/appium/appium-uiautomator2-driver-->
+        <parameter name="automationName" value="UiAutomator2"/>
+
+        <!--Path to app - The absolute local path or remote http URL. Appium will
+        attempt to install this app binary on the appropriate device first.
+        To launch an app, either path to app OR appPackage and appActivity should be specified-->
+        <!--<parameter name="app" value="Path To App"/>-->
+        <!--Java package of Android app to be run-->
         <parameter name="appPackage" value="com.android.calculator2"/>
-        &lt;!&ndash;Activity name for Android activity to be launched from package&ndash;&gt;
+        <!--Activity name for Android activity to be launched from package-->
         <parameter name="appActivity" value="com.android.calculator2.Calculator"/>
 
-        &lt;!&ndash;browserName should be empty string when automating app&ndash;&gt;
+        <!--browserName should be empty string when automating app-->
         <parameter name="browserName" value=""/>
         <parameter name="newCommandTimeout" value="120"/>
         <parameter name="parallel" value="false"/>
@@ -149,7 +155,7 @@
         </classes>
     </test>
 
-    <test name="iOS App test" parallel="false">
+    <!--<test name="iOS App test" parallel="false">
         <parameter name="browser" value="*iphone" />
         <parameter name="testType" value="app" />
         <parameter name="appiumServerURL" value="http://localhost:4723/wd/hub"/>

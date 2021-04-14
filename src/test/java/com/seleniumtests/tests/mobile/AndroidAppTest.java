@@ -33,7 +33,7 @@ public class AndroidAppTest extends SeleniumTestPlan {
     public void addTwoNumbers() throws Exception {
 
         CalculatorScreen calculatorScreen = new CalculatorScreen(true);
-        String result = calculatorScreen.clickSymbol("2").clickSymbol("+").clickSymbol("4").clickSymbol("=")
+        String result = calculatorScreen.clickDigit("2").clickPlus().clickDigit("4").clickEqual()
                 .getResultText();
         assertThat(result, is("6"));
     }
